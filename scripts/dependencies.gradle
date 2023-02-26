@@ -1,0 +1,144 @@
+ext {
+
+    buildToolsAllVersion = "30.0.3"
+
+    sdkMinVersion = 24
+    sdkTargetVersion = 31
+    sdkCompileVersion = 33
+
+    // https://github.com/shyiko/ktlint
+    ktlintVersion = "0.33.0"
+    // https://github.com/arturbosch/detekt
+    detektVersion = "1.1.1"
+
+    gradlePluginVersion = "7.3.0"
+    kotlinVersion = "1.6.21"
+    hmsVersion = "1.7.3.300"
+
+    robolectricVersion = '4.6.1'
+    androidXTestCoreVersion = '1.5.0'
+    jUnitVersion = '4.12'
+    mockkVersion = '1.12.2'
+
+    timberDependency = "com.jakewharton.timber:timber:4.7.1"
+
+    rxDependencies = [
+            android: "io.reactivex.rxjava2:rxandroid:2.1.1",
+            java   : "io.reactivex.rxjava2:rxjava:2.2.15",
+            kotlin : "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:1.6.4"
+    ]
+
+    okhttpDependencies = [
+            logging: "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    ]
+
+    retrofitVersion = "2.9.0"
+    retrofitDependencies = [
+            core            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            adapterRxJava2  : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            converterGson   : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            converterJackson: "com.squareup.retrofit2:converter-jackson:2.1.0"
+    ]
+
+    serializeDependencies = [
+            gson   : "com.google.code.gson:gson:2.8.6",
+            jackson: "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.10"
+    ]
+
+    gradlePluginDependencies = [
+            build         : "com.android.tools.build:gradle:$gradlePluginVersion",
+            kotlin        : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
+            googleServices: "com.google.gms:google-services:4.3.10",
+            perfomance    : "com.google.firebase:perf-plugin:1.4.2",  // Performance Monitoring plugin
+            huawei        : "com.huawei.agconnect:agcp:$hmsVersion",
+            crashlytics   : "com.google.firebase:firebase-crashlytics-gradle:2.3.0"
+    ]
+
+    kotlinDependencies = [
+            stdlib           : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion",
+            reflectKotlin    : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
+            coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0",
+            coroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    ]
+
+    roomVersion = "2.4.3"
+
+    androidXDependencies = [
+            roomRuntime          : "androidx.room:room-runtime:$roomVersion",
+            roomRx               : "androidx.room:room-rxjava2:$roomVersion",
+            roomCompiler         : "androidx.room:room-compiler:$roomVersion",
+            roomKtx              : "androidx.room:room-ktx:$roomVersion",
+            lifecycleLivedata    : "androidx.lifecycle:lifecycle-livedata:2.5.1",
+            lifecycleViewmodelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1",
+            lifecycle            : "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1",
+            lifecycleProcess     : "androidx.lifecycle:lifecycle-process:2.5.1",
+            lifecycleCommon      : "androidx.lifecycle:lifecycle-common-java8:2.3.1",
+            core                 : "androidx.core:core:1.9.0",
+            coreKtx              : "androidx.core:core-ktx:1.9.0",
+            fragment             : "androidx.fragment:fragment:1.5.3",
+            fragmentKtx          : "androidx.fragment:fragment-ktx:1.5.3",
+            appcompat            : "androidx.appcompat:appcompat:1.5.1",
+            legacy               : "androidx.legacy:legacy-support-core-ui:1.0.0",
+            annotation           : "androidx.annotation:annotation:1.5.0",
+            work                 : "androidx.work:work-runtime:2.7.1",
+            workKtx              : "androidx.work:work-runtime-ktx:2.7.1",
+            recyclerview         : "androidx.recyclerview:recyclerview:1.2.1",
+            swiperefreshlayout   : "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
+            multidex             : "androidx.multidex:multidex:2.0.1"
+    ]
+
+    def koinCoreVersion = "3.2.2"
+    koinDependencies = [
+            // https://github.com/InsertKoinIO/koin
+            core: "io.insert-koin:koin-android:$koinCoreVersion",
+    ]
+
+    firebaseDependencies = [
+            // https://firebase.google.com/support/release-notes/android#latest_sdk_versions
+            analytics  : "com.google.firebase:firebase-analytics:19.0.1",
+            config     : "com.google.firebase:firebase-config:19.2.0",
+            messaging  : "com.google.firebase:firebase-messaging:23.0.0",
+            pref       : "com.google.firebase:firebase-perf:19.0.8",
+            crashlytics: "com.google.firebase:firebase-crashlytics:18.2.11"
+    ]
+
+    googleDependencies = [
+            location      : "com.google.android.gms:play-services-location:19.0.1",
+            maps          : "com.google.android.gms:play-services-maps:18.1.0",
+            adsidentifier : "com.google.android.gms:play-services-ads-identifier:16.0.0",
+            mapsUtils     : "com.google.maps.android:android-maps-utils:2.3.0",
+            gcm           : "com.google.android.gms:play-services-gcm:17.0.0",
+            protobuf      : "com.google.protobuf:protobuf-java:3.11.4",
+            libphonenumber: "com.googlecode.libphonenumber:libphonenumber:8.10.12",
+            material      : "com.google.android.material:material:1.7.0",
+            flexbox       : "com.google.android.flexbox:flexbox:3.0.0"
+    ]
+
+    huaweiDependencies = [
+            base              : "com.huawei.hms:base:5.0.5.300",
+            iap               : "com.huawei.hms:iap:6.4.0.301",
+            mapKit            : "com.huawei.hms:maps:5.0.5.301",
+            pushKit           : "com.huawei.hms:push:6.5.0.300",
+            analytics         : "com.huawei.hms:hianalytics:5.1.0.301",
+            remoteConfig      : "com.huawei.agconnect:agconnect-remoteconfig:1.4.2.301",
+            crashReport       : "com.huawei.agconnect:agconnect-crash:1.4.2.300",
+            appservice        : "com.huawei.hms:appservice:+",
+            adsidentifier     : "com.huawei.hms:ads-identifier:3.4.39.302",
+            adsinstallreferrer: "com.huawei.hms:ads-installreferrer:3.4.39.302",
+            location          : "com.huawei.hms:location:5.0.5.300"
+    ]
+
+    sideUiDependencies = [
+            lottie      : "com.airbnb.android:lottie:5.0.3",
+            shadowLayout: "com.github.devlight.shadowlayout:library:1.0.2"
+    ]
+
+    unitTestsDependencies = [
+            junit              : "junit:junit:${jUnitVersion}",
+            mockk              : "io.mockk:mockk:${mockkVersion}",
+            mockito            : "org.mockito.kotlin:mockito-kotlin:4.0.0",
+            robolectric        : "org.robolectric:robolectric:${robolectricVersion}",
+            robolectricMultidex: "org.robolectric:shadows-multidex:${robolectricVersion}",
+            androidXTestCore   : "androidx.test:core:${androidXTestCoreVersion}",
+    ]
+}

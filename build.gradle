@@ -1,0 +1,47 @@
+buildscript {
+    apply from: "$project.rootDir/scripts/dependencies.gradle"
+
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+
+    dependencies {
+        classpath gradlePluginDependencies.build
+        classpath gradlePluginDependencies.kotlin
+        classpath gradlePluginDependencies.googleServices
+        classpath gradlePluginDependencies.perfomance
+        classpath gradlePluginDependencies.huawei
+        classpath gradlePluginDependencies.crashlytics
+    }
+}
+
+allprojects {
+    apply from: "$rootDir/scripts/dependencies.gradle"
+
+//    repositories {
+//        google()
+//        maven { url "https://maven.google.com" }
+//        mavenLocal()
+//        mavenCentral()
+//        maven { url 'https://developer.huawei.com/repo/' }
+//        gradlePluginPortal()
+//        jcenter()
+//        maven { url 'https://jitpack.io' }
+//    }
+
+    // for M1 Apple chip https://stackoverflow.com/a/68917988
+    allprojects {
+        configurations.all {
+            resolutionStrategy {
+                force 'org.xerial:sqlite-jdbc:3.34.0'
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
