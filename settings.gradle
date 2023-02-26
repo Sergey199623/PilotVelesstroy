@@ -1,3 +1,5 @@
 include ':app'
 include ':source'
 include ':source:common'
+include ':authentication'
+include ':source:uiKit'

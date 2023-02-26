@@ -5,12 +5,17 @@ plugins {
 
 android {
     namespace 'com.itikpilotvelesstroy'
-    compileSdk 33
+    compileSdkVersion sdkCompileVersion
+    buildToolsVersion buildToolsAllVersion
+
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.itikpilotvelesstroy"
-        minSdk 24
-        targetSdk 33
+        minSdkVersion sdkMinVersion
+        targetSdkVersion sdkTargetVersion
         versionCode 1
         versionName "1.0"
 
@@ -45,11 +50,14 @@ dependencies {
     // multidex
     implementation "androidx.multidex:multidex:2.0.1"
 
-    implementation project(path: ':source')
-    implementation project(path: ':source:common')
-
     // Koin
     implementation koinDependencies.core
+
+    // modules
+    implementation project(path: ':source')
+    implementation project(path: ':source:common')
+    implementation project(path: ':source:uiKit')
+    implementation project(path: ':authentication')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

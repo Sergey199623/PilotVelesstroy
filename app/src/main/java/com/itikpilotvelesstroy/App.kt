@@ -5,6 +5,7 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.multidex.MultiDexApplication
 import com.itik.common.di.DiStarter
+import com.itik.authentication.authentification.AuthenticationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.component.KoinComponent
 import org.koin.core.context.GlobalContext.startKoin
@@ -26,7 +27,7 @@ class App : MultiDexApplication(), DiStarter, LifecycleEventObserver {
         startKoin {
 
             androidContext(context)
-//            modules(CommonModule.create()) // Для будущие модулей
+            modules(listOf(AuthenticationModule.create()))
         }
     }
 
