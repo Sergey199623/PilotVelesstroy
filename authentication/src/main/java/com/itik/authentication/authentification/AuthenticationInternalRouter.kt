@@ -1,12 +1,16 @@
 package com.itik.authentication.authentification
 
+import android.content.Context
+import android.content.Intent
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.itikpilotvelesstroy.R
+import com.itik.authentication.R
 import com.itik.authentication.authentification.view.AuthenticationFragment
 import java.lang.ref.WeakReference
 
-internal class AuthenticationInternalRouter : AuthenticationStarter {
+internal class AuthenticationInternalRouter(
+    private val context: Context
+) : AuthenticationStarter {
 
     private var activity: WeakReference<FragmentActivity>? = null
 
@@ -14,7 +18,12 @@ internal class AuthenticationInternalRouter : AuthenticationStarter {
         this.activity = WeakReference(activity)
     }
 
-    override fun goToAuthenticationScreen() {
+    override fun goToAuthentication() {
+        val intent = Intent(context, AuthenticationActivity::class.java)
+        context.startActivity(intent)
+    }
+
+    override fun openAuthenticationScreen() {
         openFragment(AuthenticationFragment.newInstance())
     }
 
@@ -24,7 +33,7 @@ internal class AuthenticationInternalRouter : AuthenticationStarter {
 
     private fun openFragment(fragment: Fragment) {
         activity?.get()?.supportFragmentManager?.beginTransaction()
-            ?.replace(R.id.frameLayoutLauncher, fragment)
+            ?.replace(R.id.frameLayoutAuthentication, fragment)
             ?.addToBackStack("")
             ?.commit()
     }

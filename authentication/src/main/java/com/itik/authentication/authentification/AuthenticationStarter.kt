@@ -4,9 +4,11 @@ import androidx.fragment.app.FragmentActivity
 
 interface AuthenticationStarter {
 
-    fun setActivity(activity: FragmentActivity)
+    fun goToAuthentication()
 
-    fun goToAuthenticationScreen()
+    fun openAuthenticationScreen()
+
+    fun setActivity(activity: FragmentActivity)
 
     fun close()
 }
