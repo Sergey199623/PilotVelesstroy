@@ -21,16 +21,16 @@ buildscript {
 allprojects {
     apply from: "$rootDir/scripts/dependencies.gradle"
 
-//    repositories {
-//        google()
-//        maven { url "https://maven.google.com" }
-//        mavenLocal()
-//        mavenCentral()
-//        maven { url 'https://developer.huawei.com/repo/' }
-//        gradlePluginPortal()
-//        jcenter()
-//        maven { url 'https://jitpack.io' }
-//    }
+    repositories {
+        google()
+        maven { url "https://maven.google.com" }
+        mavenLocal()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+        gradlePluginPortal()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
 
     // for M1 Apple chip https://stackoverflow.com/a/68917988
     allprojects {
